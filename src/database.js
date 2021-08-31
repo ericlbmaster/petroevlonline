@@ -23,6 +23,12 @@ pool.getConnection((err, connection)=>{
     return;
 });
 
+// async function deleteLink(linkToDelete){
+//     console.log(linkToDelete);
+
+//     //await pool.query('DELETE FROM links WHERE id = ?',linkToDelete);
+// }
+
 // Promisify pool queries
 pool.query = promisify(pool.query);
 
