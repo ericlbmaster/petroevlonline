@@ -5,10 +5,12 @@ const path = require('path');
 const flash = require('connect-flash');
 const session = require('express-session');
 const mySQLStore = require('express-mysql-session');
+const passport = require('passport');
 const {database} = require('./keys');
 
 // Inicializations
 const app = express();
+require('./lib/passport');
 
 // Settings
 app.set('port', process.env.PORT || 4000);
@@ -22,7 +24,7 @@ app.engine('.hbs',exphbs({
 }));
 app.set('view engine','.hbs');
 
-// Middlewares
+// Middlewares 
 app.use(session({
     secret: 'elbmysqlnodesession',
     resave: false,
@@ -34,6 +36,8 @@ app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Global variables
 app.use((req, res, next) => {
