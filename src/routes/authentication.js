@@ -35,4 +35,16 @@ router.get('/logout', isLoggedIn, (req,res) => {
     res.redirect('/signin');
 });
 
+router.get('/home', isNotLoggedIn, (req,res) => {
+    res.render('home');
+});
+
+router.get('/products', isNotLoggedIn, (req,res) => {
+    res.render('products');
+});
+
+router.get('/contact', isNotLoggedIn, (req,res) => {
+    res.render('contact');
+});
+
 module.exports = router;
