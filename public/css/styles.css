@@ -1,0 +1,21 @@
+/* Site styles */
+
+/* Add a white background to paragraph text inside the masthead so the text remains readable over any hero background image. */
+.masthead .container p,
+.masthead .container .hero-text {
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #111;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  display: inline-block; /* keeps the block sized to the text so centering works */
+  text-align: left;      /* keeps list/bullets aligned correctly */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Optional: tweak overall masthead spacing */
+.masthead .container h1,
+.masthead .container h3 {
+  color: #fff;
+}
