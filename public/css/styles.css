@@ -19,3 +19,12 @@
 .masthead .container h3 {
   color: #fff;
 }
+
+/* Horizontal product list */
+.product-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem; /* Space between items */
+  flex-wrap: wrap; /* Wrap on smaller screens */
+}
